@@ -6,10 +6,17 @@
     if(!isset($titulo) || $titulo == "")
         $titulo = "Sistema de encuestas";
 
+    $serverName = "CA02.utj.edu.mx";   
+    $uid = "skandia";     
+    $pwd = "12345678";    
+    $databaseName = "CA02UTJ"; 
+    
     $serverName = "mssql4.gear.host";   
-    $uid = "santiago";     
-    $pwd = "contrasena12!";    
-    $databaseName = "albertodb"; 
+    $uid = "santidb";     
+    $pwd = "Ce57134Yyr~_";    
+    $databaseName = "santidb"; 
+
+    
 
 
 
@@ -22,7 +29,7 @@
     if( $conn ) {
      echo "Connection established.";
     }else{
-     echo "Connection could not be established. :c  ";
+     echo "Connection could not be established. :c  sfsdfsd";
     }
 ?>
 
