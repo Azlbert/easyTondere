@@ -5,31 +5,27 @@
     $_SESSION["Usuario"] = "xxxxxxx";
     if(!isset($titulo) || $titulo == "")
         $titulo = "Sistema de encuestas";
+    
 
     $serverName = "CA02.utj.edu.mx";   
     $uid = "skandia";     
     $pwd = "12345678";    
-    $databaseName = "CA02UTJ"; 
+    $databaseName = "encuestas"; 
     
     $serverName = "mssql4.gear.host";   
     $uid = "santidb";     
     $pwd = "Ce57134Yyr~_";    
     $databaseName = "santidb"; 
 
-    
-
-
-
     $connectionInfo = array( "UID"=>$uid,                              
                              "PWD"=>$pwd,                              
                              "Database"=>$databaseName);   
 
     /* Connect using SQL Server Authentication. */    
-    $conn = sqlsrv_connect( $serverName, $connectionInfo); 
-    if( $conn ) {
-     echo "Connection established.";
-    }else{
-     echo "Connection could not be established. :c  sfsdfsd";
+    $conn = sqlsrv_connect( $serverName, $connectionInfo);
+    if( $conn === false ) {
+        echo "Connection could not be established.";
+        die( print_r( sqlsrv_errors(), true));
     }
 ?>
 
@@ -52,4 +48,4 @@
                     <div class="titulo">
                         <legend ><?php echo $titulo; ?></legend>
                     </div>
-                    <div class="row">
+                    <div class="row">                        
